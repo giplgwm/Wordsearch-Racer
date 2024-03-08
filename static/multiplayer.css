@@ -1,0 +1,39 @@
+#username-modal h1, #waiting-modal h3 {
+    margin-bottom: 10px;
+} 
+
+/* Player List */
+#player-list {
+  list-style: none;
+  padding: 0;
+}
+
+#player-list li {
+  margin-bottom: 5px;
+} 
+
+/* Other Multiplayer Styles */
+#scores {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+#players-ready {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+#ready-btn {
+  background-color: #4CAF50; 
+  color: var(--popup-color)
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 8px 12px;
+  margin-top: 10px;
+}
+.blurred {
+  filter: blur(5px);
+}

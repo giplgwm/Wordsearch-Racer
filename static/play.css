@@ -1,0 +1,132 @@
+:root {
+  --player-color: lightblue;
+  --page-color: #f0f0f0;
+  --popup-color: white;
+}
+h3 {
+  text-align: center;
+}
+#page-container {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 24px;
+}
+body {
+  background: var(--page-color);
+}
+#game-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vh;
+  height: 80vh;
+  justify-content: space-evenly;
+}
+#wordlist-container, #player-container {
+  width: 30dvh;
+  height: 80dvh;
+  text-align: center;
+}
+#word-list {
+  list-style: none;
+}
+
+.letter:hover {
+  cursor: pointer;
+  background: var(--player-color);
+}
+.letter {
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    text-align: center;
+    border-radius: 50%; /* Maximum border-radius for circular shape */
+}
+.letter span {
+  pointer-events: none;
+}
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3px;
+}
+
+.found_word {
+  background: lightgreen;
+}
+
+.selected {
+  background: var(--player-color);
+}
+
+#svg-overlay {
+  opacity: 0.7;
+}
+
+.modal {
+  background-color: var(--popup-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px; 
+  text-align: center;
+  position: absolute;
+  margin: 0px;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal h1, .modal p, .modal button {
+  margin: 10px 0;
+}
+
+
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: var(--popup-color);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* A darker blue */
+}
+
+button:disabled {
+  background-color: #005;
+}
+
+@media (max-width: 768px) {
+  #page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+  }
+
+  #game-container {
+    order: 1; /* Ensure game container is first */
+    width: 80%;
+  }
+
+  #wordlist-container {
+    order: 2; /* Word list container comes second */
+    margin-top: 10px; /* Add some space between the containers for readability */
+  }
+
+  #player-container {
+    order: 3; /* Player container is last */
+    margin-top: 10px; /* Add some space between the containers */
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/static/create.css'>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <meta name="description" content="Play word searches in real-time with friends!">
+    <meta property="og:title" content="Wordsearch Racer">
+    <meta property="og:description" content="Create a word search">
+    <meta property="og:image" content="/static/Untitled.png">
+    <meta property="og:url" content="https://wordsearch-racer.replit.app">
+    <meta property="og:type" content="website">
+    <title>Wordsearch Racer</title>
+</head>
+<body>
+    <dialog id='error-popup' class='popup'>
+      <strong>Error</strong>
+      <p id='error-text'></p>
+    </dialog>
+  
+    <h1>Create A Wordsearch</h1>
+    <div id='wordsearch-form-container' class='card'>
+      <form id='wordsearch-form'>
+        <section>
+          <label for='title'>Title</label>
+          <input id='title' name='title' type='text' placeholder='Title' autocomplete='off'>
+        </section>
+        <section>
+          <label for='size'>Size</label>
+          <input id='size' name='size' type='number'
+            value=14 min=3 max=18>
+        </section>
+        <section>
+          <label for='word-list'>Word List</label>
+          <textarea id='word-list' name='word-list' placeholder='Word list (comma separated)'></textarea>
+        </section>
+        <button type='button' id='generate-btn'>Generate</button>
+      </form>
+    </div>
+    
+  <div id='wordsearch-preview-container'>
+    <h3 id='puzzle-title'></h3>
+    <div id='preview-grid' style="border: 1px solid white;"">
+    </div>
+    <button id='playsolobtn'>Play solo</button>
+    <button id='playonlinebtn'>Play online</button>
+  </div>
+
+
+  <script src='static/create.js'></script>
+</body>
+</html>

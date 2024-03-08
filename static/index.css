@@ -1,0 +1,110 @@
+:root {
+  --page-color: #f0f0f0;
+}
+
+#cascade-container {
+  z-index: -1;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--page-color); /* Light grey background */
+}
+#content-container {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  height: 100dvh;
+}
+
+h1 {
+  color: #007bff; /* Dark grey color */
+  margin: 20px 0;
+}
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* A darker blue */
+}
+
+@keyframes cascade {
+  0% {
+    top: -40px;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 130%;
+    opacity: 0;
+  }
+}
+
+.cascade {
+  animation-name: cascade;
+  animation-duration: 3s;
+  animation-fill-mode: forwards; /* Ensures the element retains the styles from the last keyframe after the animation ends */
+  opacity: 0.5; /* Starting opacity, though it's overridden by keyframe animation */
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.card {
+  width: 300px; /* Adjust based on your preference */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  text-align: center;
+}
+
+button {
+  margin-top: auto; /* Aligns the button to the bottom of the card */
+}

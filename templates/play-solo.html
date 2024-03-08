@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordsearch Racer</title>
+    <link rel="stylesheet" href="/static/play.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+  <meta name="description" content="Play word searches in real-time with friends!">
+  <meta property="og:title" content="Wordsearch Racer">
+  <meta property="og:description" content="An offline word search.">
+  <meta property="og:image" content="/static/Untitled.png">
+  <meta property="og:url" content="https://wordsearch-racer.replit.app">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  
+  <dialog id='win-modal' class='modal'>
+    <h1>Congratulations!</h1>
+    <p id='win-text'></p>
+    <section>
+      <h3>Share this word search or save it so you can solve it again</h3>
+      <textarea readonly style='resize: none;'id='link-box' rows=3 cols=50>
+      </textarea>
+      <button id='copy-link-btn'>Copy</button>
+    </section>
+    <button>Reset</button>
+    <button id='newpuzzle'>New puzzle</button>
+  </dialog>
+
+  
+  <div id='page-container'>
+    <div id='wordlist-container'>
+      <h3>{{puzzle.title if puzzle else ''}}</h3>
+      <ol id='word-list'>
+        {% for word in puzzle.hidden_words %}
+        <li class='wordlist-word'>{{word.word}}</li>
+        {% endfor %}
+      </ol>
+    </div>
+    <div id='game-container'>
+      <svg id="svg-overlay" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; pointer-events: none;"></svg>
+        {% set ns = namespace(row_index=0) %}
+        {% for row in puzzle.grid %}
+        <div class='row' data-row-debug='{{ ns.row_index }}'>
+            {% for letter in row %}
+            <div class='letter' data-column='{{ loop.index0 }}' data-row='{{ ns.row_index }}'><span>{{ letter }}</span></div>
+            {% endfor %}
+            {% set ns.row_index = ns.row_index + 1 %}
+        </div>
+        {% endfor %}
+    </div>
+
+
+  </div>
+  <script>window.puzzle = {{puzzle | tojson}};</script>
+  <script src='/static/play.js'></script>
+</body>
+</html>
