@@ -1,6 +1,8 @@
 # Wordsearch Racer
 This is a real-time multiplayer word search webapp built with Flask and socketio. Find the demo [here](http://wordsearch-racer.replit.app)
 
+![Preview Image](wordsearch-preview.png "Preview Image")
+
 I built this to get more practice with javascript, as well as an introduction to flask and websockets. After reading "A Common Sense Guide to Data Structures and Algorithms" a word search generator seemed 
 like an interesting challenge to tackle. The word search class I wrote to start this project has its own repo with a much more involved writeup [here](https://github.com/giplgwm/wordsearch).
 
