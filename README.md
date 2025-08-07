@@ -4,7 +4,7 @@ This is a real-time multiplayer word search webapp built with Flask and socketio
 ![Preview Image](wordsearch-preview.png "Preview Image")
 
 I built this to get more practice with javascript, as well as an introduction to flask and websockets. After reading "A Common Sense Guide to Data Structures and Algorithms" a word search generator seemed 
-like an interesting challenge to tackle. The word search class I wrote to start this project has its own repo with a much more involved writeup [here](https://github.com/giplgwm/wordsearch).
+like an interesting challenge to tackle.
 
 ## Issues
 - The game does not work properly on mobile devices. Getting mobile input to work was simple, but the way we're marking found words is an svg overlay and getting that to properly align with the game on a mobile layout has been tricky.
